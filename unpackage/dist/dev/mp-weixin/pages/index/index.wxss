@@ -32,4 +32,61 @@
 .indexContainer .header .headerSearch .iconfont {
   margin: 0 10rpx;
 }
+.indexContainer .navList {
+  height: 80rpx;
+  display: flex;
+}
+.indexContainer .navList .navItem {
+  width: 140rpx;
+  height: 80rpx;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 80rpx;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+.indexContainer .navList .navItem.active {
+  border-bottom: 2rpx solid #f00;
+}
+.indexContainer .bodyList {
+  height: calc(100vh - 80rpx);
+}
+.indexContainer .bodyList .bodyItem .bodySwiperList .bodySwiperImg {
+  width: 100%;
+  height: 300rpx;
+}
+.indexContainer .bodyList .iconList {
+  display: flex;
+  justify-content: space-around;
+  margin: 10rpx 0 20rpx 0;
+}
+.indexContainer .bodyList .iconList .iconItem {
+  display: flex;
+  align-items: center;
+}
+.indexContainer .bodyList .iconList .iconItem .iconImg {
+  width: 32rpx;
+  height: 32rpx;
+}
+.indexContainer .bodyList .iconList .iconItem .iconText {
+  font-size: 28rpx;
+}
+.indexContainer .bodyList .categoryList {
+  display: flex;
+  flex-wrap: wrap;
+}
+.indexContainer .bodyList .categoryList .categoryItem {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+.indexContainer .bodyList .categoryList .categoryItem .categoryImg {
+  width: 110rpx;
+  height: 110rpx;
+}
+.indexContainer .bodyList .categoryList .categoryItem .categoryText {
+  font-size: 28rpx;
+}
 

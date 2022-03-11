@@ -1,11 +1,23 @@
 {
   "name": "ulishop-app-project",
   "version": "1.0.0",
-  "description": "",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HuXiTai/UliShop-App-Project.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/HuXiTai/UliShop-App-Project/issues"
+  },
+  "homepage": "https://github.com/HuXiTai/UliShop-App-Project#readme",
+  "description": "",
+  "dependencies": {
+    "vuex": "^4.0.2"
+  }
 }
