@@ -1,0 +1,35 @@
+.indexContainer {
+  height: 100%;
+}
+.indexContainer .header {
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+}
+.indexContainer .header .headerLogo {
+  width: 120rpx;
+  height: 40rpx;
+  margin: 0 20rpx;
+}
+.indexContainer .header .headerBtn {
+  width: 140rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 40rpx;
+  padding: 0 10rpx;
+  margin: 0 10rpx;
+}
+.indexContainer .header .headerSearch {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  flex: 1;
+  border: 2rpx solid #aaa;
+  border-radius: 10rpx;
+  height: 40rpx;
+}
+.indexContainer .header .headerSearch .iconfont {
+  margin: 0 10rpx;
+}
+

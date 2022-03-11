@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "uli-app",
+    "navigationBarBackgroundColor": "#bb2c08"
+  },
+  "usingComponents": {}
+}

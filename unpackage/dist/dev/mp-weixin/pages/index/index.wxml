@@ -1,0 +1,1 @@
+<view class="indexContainer"><view class="header"><image class="headerLogo" src="../../static/images/logo.png"></image><view class="headerSearch"><text class="iconfont icon-sousuo:before"></text><input class="headerIpt" placeholder="商品搜索" placeholder-style="color:red"/></view><button class="headerBtn">芝麻糊糊</button></view></view>
