@@ -947,7 +947,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"UliShop-App-Project","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"UliShop-App-Project","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -7647,7 +7647,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"UliShop-App-Project","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_NAME":"UliShop-App-Project","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7668,14 +7668,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"UliShop-App-Project","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"UliShop-App-Project","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"UliShop-App-Project","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"UliShop-App-Project","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7761,7 +7761,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"UliShop-App-Project","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"UliShop-App-Project","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -8777,25 +8777,37 @@ function normalizeComponent (
 
 
 /***/ }),
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */,
-/* 24 */,
-/* 25 */,
-/* 26 */,
-/* 27 */,
-/* 28 */,
-/* 29 */,
-/* 30 */
+/* 12 */
+/*!*****************************************************************************************************************************!*\
+  !*** C:/Users/ASUS/Desktop/前端/每日笔记/08.小程序/小程序项目/UliShop-App-Project/UliShop-App-Project/UliShop-App-Project/store/index.js ***!
+  \*****************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 3));
+var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 13));
+var _home = _interopRequireDefault(__webpack_require__(/*! ./modules/home.js */ 14));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+_vue.default.use(_vuex.default);
+
+var state = {};
+
+var actions = {};
+
+var mutations = {};
+
+var getters = {};var _default =
+
+new _vuex.default.Store({
+  state: state,
+  actions: actions,
+  mutations: mutations,
+  getters: getters,
+  modules: {
+    home: _home.default } });exports.default = _default;
+
+/***/ }),
+/* 13 */
 /*!**************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vuex3/dist/vuex.common.js ***!
   \**************************************************************************************/
@@ -10051,37 +10063,7 @@ module.exports = index_cjs;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../webpack/buildin/global.js */ 2)))
 
 /***/ }),
-/* 31 */
-/*!*****************************************************************************************************************************!*\
-  !*** C:/Users/ASUS/Desktop/前端/每日笔记/08.小程序/小程序项目/UliShop-App-Project/UliShop-App-Project/UliShop-App-Project/store/index.js ***!
-  \*****************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 3));
-var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 30));
-var _home = _interopRequireDefault(__webpack_require__(/*! ./modules/home.js */ 32));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-_vue.default.use(_vuex.default);
-
-var state = {};
-
-var actions = {};
-
-var mutations = {};
-
-var getters = {};var _default =
-
-new _vuex.default.Store({
-  state: state,
-  actions: actions,
-  mutations: mutations,
-  getters: getters,
-  modules: {
-    home: _home.default } });exports.default = _default;
-
-/***/ }),
-/* 32 */
+/* 14 */
 /*!************************************************************************************************************************************!*\
   !*** C:/Users/ASUS/Desktop/前端/每日笔记/08.小程序/小程序项目/UliShop-App-Project/UliShop-App-Project/UliShop-App-Project/store/modules/home.js ***!
   \************************************************************************************************************************************/
@@ -10089,22 +10071,34 @@ new _vuex.default.Store({
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 33));var _request = _interopRequireDefault(__webpack_require__(/*! ../../utils/request.js */ 36));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 15));var _request = _interopRequireDefault(__webpack_require__(/*! ../../utils/request.js */ 18));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}
 var state = {
-  homeInitInfo: {} };
+  homeInitInfo: {},
+  cardInitInfo: [] };
 
 var actions = {
   getHomeInitInfo: function getHomeInitInfo(_ref)
 
   {return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var commit, re;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:commit = _ref.commit;_context.next = 3;return (
                 (0, _request.default)("/getIndexData"));case 3:re = _context.sent;
-              console.log(re);
-              commit("GET_HOME_INIT_INFO", re);case 6:case "end":return _context.stop();}}}, _callee);}))();
+              commit("GET_HOME_INIT_INFO", re);case 5:case "end":return _context.stop();}}}, _callee);}))();
+  },
+
+  getCardInitInfo: function getCardInitInfo(_ref2)
+
+  {return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var commit, re;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:commit = _ref2.commit;_context2.next = 3;return (
+                (0, _request.default)("/getIndexCateList"));case 3:re = _context2.sent;
+              commit("GET_CARD_INIT_INFO", re);case 5:case "end":return _context2.stop();}}}, _callee2);}))();
   } };
 
 var mutations = {
   GET_HOME_INIT_INFO: function GET_HOME_INIT_INFO(state, value) {
     state.homeInitInfo = value;
+  },
+
+  GET_CARD_INIT_INFO: function GET_CARD_INIT_INFO(state, value) {
+    console.log(value, "123");
+    state.cardInitInfo = value;
   } };
 
 var getters = {
@@ -10122,20 +10116,21 @@ var getters = {
   state: state,
   actions: actions,
   mutations: mutations,
-  getters: getters };exports.default = _default;
+  getters: getters,
+  namespaced: true };exports.default = _default;
 
 /***/ }),
-/* 33 */
+/* 15 */
 /*!**********************************************************!*\
   !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
   \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! regenerator-runtime */ 34);
+module.exports = __webpack_require__(/*! regenerator-runtime */ 16);
 
 /***/ }),
-/* 34 */
+/* 16 */
 /*!************************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime-module.js ***!
   \************************************************************/
@@ -10166,7 +10161,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(/*! ./runtime */ 35);
+module.exports = __webpack_require__(/*! ./runtime */ 17);
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -10182,7 +10177,7 @@ if (hadRuntime) {
 
 
 /***/ }),
-/* 35 */
+/* 17 */
 /*!*****************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime.js ***!
   \*****************************************************/
@@ -10913,7 +10908,7 @@ if (hadRuntime) {
 
 
 /***/ }),
-/* 36 */
+/* 18 */
 /*!*******************************************************************************************************************************!*\
   !*** C:/Users/ASUS/Desktop/前端/每日笔记/08.小程序/小程序项目/UliShop-App-Project/UliShop-App-Project/UliShop-App-Project/utils/request.js ***!
   \*******************************************************************************************************************************/
