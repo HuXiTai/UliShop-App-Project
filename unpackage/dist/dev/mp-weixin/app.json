@@ -3,7 +3,9 @@
     "pages/category/category",
     "pages/index/index",
     "pages/center/center",
-    "pages/shopcart/shopcart"
+    "pages/shopcart/shopcart",
+    "pages/login/login",
+    "pages/detail/detail"
   ],
   "subPackages": [],
   "window": {
@@ -42,5 +44,5 @@
     ]
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap11.json"
+  "sitemapLocation": "sitemap48.json"
 }

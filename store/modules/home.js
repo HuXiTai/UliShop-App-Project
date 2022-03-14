@@ -24,7 +24,6 @@ const mutations = {
 	},
 
 	GET_CARD_INIT_INFO(state, value) {
-		console.log(value,"123");
 		state.cardInitInfo = value
 	}
 }

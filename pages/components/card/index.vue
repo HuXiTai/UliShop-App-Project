@@ -1,21 +1,19 @@
 <template>
 	<view class="card">
 		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" class="swiperList">
-			<swiper-item v-for="(banner, index) of currentDataCategory.bannerUrlList" :key="index" class="swiperItem">
-				<image :src="banner" class="swiperImg"></image>
-			</swiper-item>
+			<swiper-item v-for="(banner, index) of currentDataCategory.bannerUrlList" :key="index" class="swiperItem"><image :src="banner" class="swiperImg"></image></swiper-item>
 		</swiper>
 
 		<view class="title">
-			<view>{{currentDataCategory.name}}</view>
-			<view>{{currentDataCategory.frontName}}</view>
+			<view>{{ currentDataCategory.name }}</view>
+			<view>{{ currentDataCategory.frontName }}</view>
 		</view>
 
 		<view class="goodsList">
-			<view v-for="(goods,index) in currentData.itemList" :key="goods.id" class="goodsItem">
+			<view v-for="(goods, index) in currentData.itemList" :key="goods.id" class="goodsItem" @click="toDetail(goods)">
 				<image :src="goods.primaryPicUrl" class="goodsImg"></image>
-				<text class="goodsText">{{goods.name}}</text>
-				<text class="goodsPrice">{{goods.counterPrice}}</text>
+				<text class="goodsText">{{ goods.name }}</text>
+				<text class="goodsPrice">{{ goods.counterPrice }}</text>
 			</view>
 		</view>
 	</view>
@@ -32,7 +30,12 @@ export default {
 		this.getCardInitInfo();
 	},
 	methods: {
-		...mapActions('home', ['getCardInitInfo'])
+		...mapActions('home', ['getCardInitInfo']),
+		toDetail(goods) {
+			wx.navigateTo({
+				url: '/pages/detail/detail?goods=' + JSON.stringify(goods)
+			});
+		}
 	},
 	computed: {
 		...mapState('home', ['cardInitInfo']),

@@ -6,7 +6,6 @@
 				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false
 			}
-
 		},
 		{
 			"path": "pages/index/index",
@@ -28,7 +27,25 @@
 			}
 
 		}
-	],
+	    ,{
+            "path" : "pages/login/login",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/detail/detail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "uli-app",

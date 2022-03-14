@@ -947,7 +947,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_NAME":"UliShop-App-Project","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"UliShop-App-Project","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -7647,7 +7647,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_NAME":"UliShop-App-Project","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"UliShop-App-Project","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7668,14 +7668,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_NAME":"UliShop-App-Project","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"UliShop-App-Project","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_NAME":"UliShop-App-Project","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"UliShop-App-Project","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7761,7 +7761,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_NAME":"UliShop-App-Project","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"UliShop-App-Project","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -8787,7 +8787,9 @@ function normalizeComponent (
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 3));
 var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 13));
-var _home = _interopRequireDefault(__webpack_require__(/*! ./modules/home.js */ 14));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _home = _interopRequireDefault(__webpack_require__(/*! ./modules/home.js */ 14));
+var _category = _interopRequireDefault(__webpack_require__(/*! ./modules/category.js */ 19));
+var _shopcart = _interopRequireDefault(__webpack_require__(/*! ./modules/shopcart.js */ 20));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 _vue.default.use(_vuex.default);
 
 var state = {};
@@ -8804,7 +8806,9 @@ new _vuex.default.Store({
   mutations: mutations,
   getters: getters,
   modules: {
-    home: _home.default } });exports.default = _default;
+    home: _home.default,
+    category: _category.default,
+    shopcart: _shopcart.default } });exports.default = _default;
 
 /***/ }),
 /* 13 */
@@ -10097,7 +10101,6 @@ var mutations = {
   },
 
   GET_CARD_INIT_INFO: function GET_CARD_INIT_INFO(state, value) {
-    console.log(value, "123");
     state.cardInitInfo = value;
   } };
 
@@ -10933,6 +10936,154 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 }var _default =
 
 request;exports.default = _default;
+
+/***/ }),
+/* 19 */
+/*!****************************************************************************************************************************************!*\
+  !*** C:/Users/ASUS/Desktop/前端/每日笔记/08.小程序/小程序项目/UliShop-App-Project/UliShop-App-Project/UliShop-App-Project/store/modules/category.js ***!
+  \****************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 15));var _request = _interopRequireDefault(__webpack_require__(/*! ../../utils/request.js */ 18));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}
+
+var state = {
+  categoryList: [] };
+
+
+var actions = {
+  getCategoryList: function getCategoryList(_ref)
+
+  {return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var commit, re;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:commit = _ref.commit;_context.next = 3;return (
+                (0, _request.default)('/getCateGoryData'));case 3:re = _context.sent;
+              commit("GET_CATEGORY_LIST", re);case 5:case "end":return _context.stop();}}}, _callee);}))();
+  } };
+
+
+var mutations = {
+  GET_CATEGORY_LIST: function GET_CATEGORY_LIST(state, value) {
+    state.categoryList = value;
+  } };
+
+
+var getters = {};var _default =
+
+{
+  state: state,
+  actions: actions,
+  mutations: mutations,
+  getters: getters,
+  namespaced: true };exports.default = _default;
+
+/***/ }),
+/* 20 */
+/*!****************************************************************************************************************************************!*\
+  !*** C:/Users/ASUS/Desktop/前端/每日笔记/08.小程序/小程序项目/UliShop-App-Project/UliShop-App-Project/UliShop-App-Project/store/modules/shopcart.js ***!
+  \****************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var state = {
+  shopCartList: [{
+    count: 2,
+    isChecked: false,
+    "promId": 0,
+    "showPoints": false,
+    "itemTagList": [{
+      "itemId": 1535004,
+      "tagId": 128111157,
+      "freshmanExclusive": false,
+      "name": "暖冬特惠",
+      "subType": 204,
+      "forbidJump": false,
+      "type": 2 }],
+
+    "rank": 1,
+    "id": 1535004,
+    "sellVolume": 4001,
+    "primaryPicUrl": "https://yanxuan-item.nosdn.127.net/f79906f1b1fe86420ea40473de66ec0e.png",
+    "soldOut": false,
+    "sortFlag": 0,
+    "commentCount": 0,
+    "onSaleTime": 1538101761748,
+    "picMode": 1,
+    "commentWithPicCount": 0,
+    "underShelf": false,
+    "status": 2,
+    "couponConflict": true,
+    "forbiddenBuy": false,
+    "promotionDesc": "暖冬特惠",
+    "limitedFlag": 204,
+    "pieceNum": 0,
+    "itemSizeTableDetailFlag": false,
+    "forbidExclusiveCal": false,
+    "rewardShareFlag": false,
+    "updateTime": 1575893634989,
+    "showCommentEntrance": true,
+    "pieceUnitDesc": "件",
+    "specialPromTag": "",
+    "counterPrice": 299,
+    "categoryL2Id": 0,
+    "retailPrice": 209,
+    "primarySkuPreSellPrice": 0,
+    "preLimitFlag": 0,
+    "itemPromValid": true,
+    "promTag": "暖冬特惠",
+    "source": 0,
+    "points": 0,
+    "primarySkuPreSellStatus": 0,
+    "extraServiceFlag": 0,
+    "flashPageLink": "",
+    "autoOnsaleTimeLeft": 0,
+    "innerData": {},
+    "saleCenterSkuId": 0,
+    "pointsStatus": 0,
+    "extraPrice": "",
+    "colorNum": 0,
+    "showTime": 0,
+    "autoOnsaleTime": 0,
+    "preemptionStatus": 1,
+    "isPreemption": 0,
+    "zcSearchFlag": false,
+    "name": "男式色拉姆内衣套装2.0",
+    "appExclusiveFlag": false,
+    "itemType": 1,
+    "listPicUrl": "https://yanxuan-item.nosdn.127.net/c2eeb1b872af1b8efc179a7515aacdaa.png",
+    "pointsPrice": 0,
+    "simpleDesc": "色拉姆发热面料，加厚升级",
+    "seoTitle": "",
+    "newItemFlag": false,
+    "buttonType": 0,
+    "primarySkuId": 1636062,
+    "displaySkuId": 1636056,
+    "productPlace": "",
+    "itemSizeTableFlag": false },
+
+  {
+    count: 4,
+    isChecked: true,
+    "id": 1536001,
+    "primaryPicUrl": "https://yanxuan-item.nosdn.127.net/32b8b2d07b1c4327593a4a70993eeac2.png",
+    "counterPrice": 299,
+    "name": "女式色拉姆内衣套装2.0" }] };
+
+
+
+
+var actions = {};
+
+var mutations = {};
+
+var getters = {};var _default =
+
+{
+  state: state,
+  actions: actions,
+  mutations: mutations,
+  getters: getters,
+  namespaced: true };exports.default = _default;
 
 /***/ })
 ]]);
